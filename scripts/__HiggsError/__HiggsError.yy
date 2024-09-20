@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"__HiggsConfig",
+  "%Name":"__HiggsError",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"__HiggsConfig",
+  "name":"__HiggsError",
   "parent":{
-    "name":"Higgs",
-    "path":"folders/Higgs.yy",
+    "name":"(System)",
+    "path":"folders/Higgs/(System).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

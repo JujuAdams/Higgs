@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"__HiggsConfig",
+  "%Name":"HiggsStream",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"__HiggsConfig",
+  "name":"HiggsStream",
   "parent":{
     "name":"Higgs",
     "path":"folders/Higgs.yy",

@@ -1,7 +1,7 @@
 {
   "$GMShader":"",
-  "%Name":"__shdHiggsStarburst12",
-  "name":"__shdHiggsStarburst12",
+  "%Name":"__shdHiggsStream",
+  "name":"__shdHiggsStream",
   "parent":{
     "name":"(System)",
     "path":"folders/Higgs/(System).yy",

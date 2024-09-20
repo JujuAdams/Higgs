@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"__HiggsConfig",
+  "%Name":"HiggsSpriteCache",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"__HiggsConfig",
+  "name":"HiggsSpriteCache",
   "parent":{
-    "name":"Higgs",
-    "path":"folders/Higgs.yy",
+    "name":"Sprite Cache",
+    "path":"folders/Higgs/Sprite Cache.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

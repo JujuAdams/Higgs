@@ -5,7 +5,7 @@ function HiggsStarburst12() constructor
     static _system = __HiggsSystem();
     
     static _vertexBuffer = _system.__bufferCache.__size12;
-    static _texture      = sprite_get_texture(sHiggsStar, 0);
+    static _texture      = sprite_get_texture(sStar, 0);
     static _lifeLength   = 25;
     
     __seed = __HiggsRandom();

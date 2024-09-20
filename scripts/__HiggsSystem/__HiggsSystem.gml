@@ -11,6 +11,16 @@ function __HiggsSystem()
     _system = {};
     with(_system)
     {
+        __cacheSurfaceSize = undefined;
+        __cacheCellWidth   = 0;
+        __cacheCellHeight  = 0;
+        __cacheArray       = [];
+        
+        __cacheLookupMap = ds_map_create();
+        __cacheSprite    = undefined;
+        __cacheTexture   = undefined;
+        __cacheCellUVs   = [0, 0, 1];
+        
         __bufferCache = {};
         
         var _funcGenerateVertexBuffer = function(_count)

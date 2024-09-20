@@ -2,6 +2,5 @@
 
 function __HiggsConfigSpriteCache()
 {
-    HiggsSpriteCache(sStar);
-    HiggsSpriteCache(sStar_1);
+    HiggsCacheSprite(sStar);
 }

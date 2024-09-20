@@ -4,10 +4,12 @@ function HiggsStream() constructor
 {
     static _system = __HiggsSystem();
     
+    static _shader       = __shdHiggsStream;
     static _count        = 20;
     static _vertexBuffer = HiggsGetVertexBuffer(_count);
     static _cellUVs      = _system.__cacheCellUVs;
     static _texture      = _system.__cacheTexture;
+    static _spriteIndex  = HiggsGetSpriteIndex(sStar);
     
     __seed = __HiggsRandom();
     __time = 0;
@@ -45,18 +47,20 @@ function HiggsStream() constructor
     {
         ++__time;
         
-        static _u_vPosition     = shader_get_uniform(__shdHiggsStream, "u_vPosition");
-        static _u_vParticleData = shader_get_uniform(__shdHiggsStream, "u_vParticleData");
-        static _u_fSeed         = shader_get_uniform(__shdHiggsStream, "u_fSeed");
-        static _u_fTime         = shader_get_uniform(__shdHiggsStream, "u_fTime");
-        static _u_vTextureData  = shader_get_uniform(__shdHiggsStream, "u_vTextureData");
+        static _u_vPosition     = shader_get_uniform(_shader, "u_vPosition");
+        static _u_vParticleData = shader_get_uniform(_shader, "u_vParticleData");
+        static _u_fSeed         = shader_get_uniform(_shader, "u_fSeed");
+        static _u_fTime         = shader_get_uniform(_shader, "u_fTime");
+        static _u_vTextureData  = shader_get_uniform(_shader, "u_vTextureData");
+        static _u_fSpriteIndex  = shader_get_uniform(_shader, "u_fSpriteIndex");
         
-        HIGGS_SHADER_SET(__shdHiggsStream);
+        HIGGS_SHADER_SET(_shader);
         shader_set_uniform_f(_u_vPosition, _x, _y);
         shader_set_uniform_f_array(_u_vParticleData, __particleDataArray);
         shader_set_uniform_f(_u_fSeed, __seed);
         shader_set_uniform_f(_u_fTime, __time);
-        shader_set_uniform_f_array(_u_vTextureData, _cellUVs)
+        shader_set_uniform_f_array(_u_vTextureData, _cellUVs);
+        shader_set_uniform_f(_u_fSpriteIndex, _spriteIndex);
         vertex_submit(_vertexBuffer, pr_trianglelist, _texture);
         HIGGS_SHADER_RESET();
         

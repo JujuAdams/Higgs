@@ -26,6 +26,7 @@ uniform vec3  u_vParticleData[int(COUNT)];
 uniform float u_fSeed;
 uniform float u_fTime;
 uniform vec3  u_vTextureData;
+uniform float u_fSpriteIndex;
 
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
@@ -190,6 +191,6 @@ void main()
     
     
     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION]*vec4(position, 0.0, 1.0);
-    v_vTexcoord = spriteTextureCoords(mod(20.0*PARTICLE_AGE, 2.0));
+    v_vTexcoord = spriteTextureCoords(u_fSpriteIndex + mod(20.0*PARTICLE_AGE, 2.0));
     v_vColour   = COLOUR;
 }

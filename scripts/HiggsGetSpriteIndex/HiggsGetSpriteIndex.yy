@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"HiggsSpriteCache",
+  "%Name":"HiggsGetSpriteIndex",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"HiggsSpriteCache",
+  "name":"HiggsGetSpriteIndex",
   "parent":{
     "name":"Higgs",
     "path":"folders/Higgs.yy",

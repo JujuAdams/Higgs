@@ -65,6 +65,26 @@ vec2 randomBetween(vec2 mini, vec2 maxi, float salt)
     return mix(mini, maxi, random(1.0, salt));
 }
 
+float randomWhole(float value, float salt)
+{
+    return floor(value*fract(sin(dot(vec2(u_fSeed + salt, PARTICLE_INDEX), vec2(12.9898, 78.233))) * 43758.5453) + 0.5);
+}
+
+float randomRangeWhole(float range, float salt)
+{
+    return floor(range*(1.0 - random(2.0, salt)) + 0.5);
+}
+
+float randomBetweenWhole(float mini, float maxi, float salt)
+{
+    return floor(mix(mini, maxi, random(1.0, salt)) + 0.5);
+}
+
+vec2 randomBetweenWhole(vec2 mini, vec2 maxi, float salt)
+{
+    return floor(mix(mini, maxi, random(1.0, salt)) + 0.5);
+}
+
 float distribute(float mini, float maxi)
 {
     return mix(mini, maxi, PARTICLE_INDEX / (COUNT - 1.0));
@@ -109,6 +129,12 @@ float choose(float a, float b, float salt)
     return mix(a, b, step(0.5, random(1.0, salt)));
 }
 
+vec2 textureCoords(float spriteIndex)
+{
+    spriteIndex = floor(spriteIndex);
+    return u_vCellUVs.xy*(in_TextureCoord + vec2(mod(spriteIndex, u_vCellUVs.z), floor(spriteIndex / u_vCellUVs.z)));
+}
+
 void main()
 {
     vec2 position = in_Position.xy;
@@ -126,9 +152,7 @@ void main()
     
     
     
-    float spriteIndex = floor(randomBetween(0.0, 1.0,   1.0) + 0.5);
-    
     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION]*vec4(position, 0.0, 1.0);
-    v_vTexcoord = u_vCellUVs.xy*(in_TextureCoord + vec2(mod(spriteIndex, u_vCellUVs.z), floor(spriteIndex / u_vCellUVs.z)));
+    v_vTexcoord = textureCoords(mod(20.0*AGE, 2.0));
     v_vColour   = COLOUR;
 }

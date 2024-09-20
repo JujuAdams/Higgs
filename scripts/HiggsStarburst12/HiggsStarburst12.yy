@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"HiggsStarburst12",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"HiggsStarburst12",
+  "parent":{
+    "name":"Higgs",
+    "path":"folders/Higgs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__HiggsConfig",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__HiggsConfig",
+  "parent":{
+    "name":"(System)",
+    "path":"folders/Higgs/(System).yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

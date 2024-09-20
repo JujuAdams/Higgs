@@ -1,5 +1,5 @@
 #define PARTICLE_INDEX  in_Position.z
-#define SIZE            vec2(60.0, 60.0)
+#define PARTICLE_SIZE   u_vTextureData.xy
 #define COUNT           12.0
 #define COLOUR          vec4(247.0/255.0, 223.0/255.0, 100.0/255.0, 1.0) //#F7DF64 at 100% alpha
 
@@ -9,6 +9,7 @@ attribute vec2 in_TextureCoord;
 uniform vec2  u_vPosition;
 uniform float u_fSeed;
 uniform float u_fLife;
+uniform vec3  u_vTextureData;
 
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
@@ -104,13 +105,20 @@ float choose(float a, float b, float salt)
     return mix(a, b, step(0.5, random(1.0, salt)));
 }
 
+vec2 spriteTextureCoords(float spriteIndex)
+{
+    spriteIndex = floor(spriteIndex);
+    float limit = floor(u_vTextureData.z / u_vTextureData.x);
+    return (vec2(mod(spriteIndex, limit), floor(spriteIndex / limit)) + in_TextureCoord.xy) * (PARTICLE_SIZE / u_vTextureData.z);
+}
+
 void main()
 {
     vec2 position = in_Position.xy;
     
     
     
-    position *= SIZE; //Scale up the particle
+    position *= PARTICLE_SIZE; //Scale up the particle
     position *= randomBetween(0.8, 1.2,   0.0); //Choose a random scaling factor between 80% and 120%
     position *= (1.0 - easeSlowToFastQuad(u_fLife)); //Put the shrinking animation on a smooth curve
     rotate(position, random(360.0,   1.0)); //Rotate randomly
@@ -123,6 +131,6 @@ void main()
     
     
     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION]*vec4(position, 0.0, 1.0);
-    v_vTexcoord = in_TextureCoord;
+    v_vTexcoord = spriteTextureCoords(0.0);
     v_vColour   = COLOUR;
 }

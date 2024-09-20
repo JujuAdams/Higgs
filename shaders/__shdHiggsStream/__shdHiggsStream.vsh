@@ -1,22 +1,40 @@
+///////////////////////
+//                   //
+//  Helpful Defines  //
+//                   //
+///////////////////////
+
 #define PARTICLE_INDEX  in_Position.z
-#define SIZE            vec2(60.0, 60.0)
-#define COUNT           12.0
+#define PARTICLE_SIZE   u_vTextureData.xy
+#define PARTICLE_AGE    ((u_fTime - u_vParticleData[int(PARTICLE_INDEX)].z) / LIFETIME)
+#define PARTICLE_POS    (u_vPosition + u_vParticleData[int(PARTICLE_INDEX)].xy)
+#define COUNT           20.0
 #define COLOUR          vec4(247.0/255.0, 223.0/255.0, 100.0/255.0, 1.0) //#F7DF64 at 100% alpha
 #define LIFETIME        250.0
-#define AGE             ((u_fTime - u_vParticleData[int(PARTICLE_INDEX)].z) / LIFETIME)
-#define POSITION        (u_vPosition + u_vParticleData[int(PARTICLE_INDEX)].xy)
+
+////////////////////////
+//                    //
+//  Shader Machinery  //
+//                    //
+////////////////////////
 
 attribute vec3 in_Position; //z-coord is the particle index
 attribute vec2 in_TextureCoord;
 
 uniform vec2  u_vPosition;
-uniform vec3  u_vParticleData[12];
+uniform vec3  u_vParticleData[int(COUNT)];
 uniform float u_fSeed;
 uniform float u_fTime;
-uniform vec3  u_vCellUVs;
+uniform vec3  u_vTextureData;
 
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
+
+/////////////////////
+//                 //
+//  Easing Curves  //
+//                 //
+/////////////////////
 
 float easeSlowToFastQuad(float value)
 {
@@ -44,6 +62,12 @@ float easeSmoothStep(float value)
 {
     return smoothstep(0.0, 1.0, value);
 }
+
+//////////////
+//          //
+//  Random  //
+//          //
+//////////////
 
 float random(float value, float salt)
 {
@@ -84,6 +108,12 @@ vec2 randomBetweenWhole(vec2 mini, vec2 maxi, float salt)
 {
     return floor(mix(mini, maxi, random(1.0, salt)) + 0.5);
 }
+
+////////////////////
+//                //
+//  More Helpers  //
+//                //
+////////////////////
 
 float distribute(float mini, float maxi)
 {
@@ -129,11 +159,18 @@ float choose(float a, float b, float salt)
     return mix(a, b, step(0.5, random(1.0, salt)));
 }
 
-vec2 textureCoords(float spriteIndex)
+vec2 spriteTextureCoords(float spriteIndex)
 {
     spriteIndex = floor(spriteIndex);
-    return u_vCellUVs.xy*(in_TextureCoord + vec2(mod(spriteIndex, u_vCellUVs.z), floor(spriteIndex / u_vCellUVs.z)));
+    float limit = floor(u_vTextureData.z / u_vTextureData.x);
+    return (vec2(mod(spriteIndex, limit), floor(spriteIndex / limit)) + in_TextureCoord.xy) * (PARTICLE_SIZE / u_vTextureData.z);
 }
+
+/////////////////////
+//                 //
+//  Main Function  //
+//                 //
+/////////////////////
 
 void main()
 {
@@ -141,18 +178,18 @@ void main()
     
     
     
-    position *= SIZE; //Scale up the particle
+    position *= PARTICLE_SIZE; //Scale up the particle
     position *= randomBetween(0.8, 1.2,   0.0); //Choose a random scaling factor between 80% and 120%
-    position *= max(0.0, (1.0 - easeSlowToFastQuad(AGE))); //Put the shrinking animation on a smooth curve
-    //rotate(position, random(360.0,   1.0)); //Rotate randomly
+    position *= max(0.0, (1.0 - easeSlowToFastQuad(PARTICLE_AGE))); //Put the shrinking animation on a smooth curve
+    rotate(position, random(360.0,   1.0)); //Rotate randomly
     
-    position += POSITION; //Offset the position to the draw coordinates
-    float dist = 400.0*easeFastToSlowQuart(AGE); //Choose a random ending offset and smoothly animate to get there
+    position += PARTICLE_POS; //Offset the position to the draw coordinates
+    float dist = 400.0*easeFastToSlowQuart(PARTICLE_AGE); //Choose a random ending offset and smoothly animate to get there
     moveDirection(position, dist, 0.0); //Move along this path, including a 100px starting offset
     
     
     
     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION]*vec4(position, 0.0, 1.0);
-    v_vTexcoord = textureCoords(mod(20.0*AGE, 2.0));
+    v_vTexcoord = spriteTextureCoords(mod(20.0*PARTICLE_AGE, 2.0));
     v_vColour   = COLOUR;
 }

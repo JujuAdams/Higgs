@@ -2,5 +2,5 @@
 
 function __HiggsError(_string)
 {
-    show_error("Higgs: " + string(_string) + "\n ", true);
+    show_error(" \nHiggs: " + string(_string) + "\n ", true);
 }

@@ -11,7 +11,6 @@ function __HiggsSystem()
     _system = {};
     with(_system)
     {
-        __cacheSurfaceSize = undefined;
         __cacheCellWidth   = 0;
         __cacheCellHeight  = 0;
         __cacheArray       = [];
@@ -21,47 +20,67 @@ function __HiggsSystem()
         __cacheTexture   = undefined;
         __cacheCellUVs   = [0, 0, 1];
         
-        __bufferCache = {};
+        __vertexBufferMap = ds_map_create();
         
-        var _funcGenerateVertexBuffer = function(_count)
+        //////////////////////////
+        //                      //
+        //  Build Sprite Cache  //
+        //                      //
+        //////////////////////////
+        
+        __inSpriteCacheConfig = true;
+        __HiggsConfigSpriteCache();
+        __inSpriteCacheConfig = false;
+        
+        var _surface = surface_create(HIGGS_SPRITE_CACHE_SURFACE_SIZE, HIGGS_SPRITE_CACHE_SURFACE_SIZE);
+        surface_set_target(_surface);
+        draw_clear_alpha(c_black, 0);
+        gpu_set_blendmode_ext(bm_one, bm_zero);
+        
+        var _index = 0;
+        var _x = 0;
+        var _y = 0;
+        
+        var _i = 0;
+        repeat(array_length(__cacheArray))
         {
-            static _vertexFormat = undefined;
-            if (_vertexFormat == undefined)
+            var _sprite = __cacheArray[_i];
+            __cacheLookupMap[? _sprite] = _index;
+            
+            var _j = 0;
+            repeat(sprite_get_number(_sprite))
             {
-                vertex_format_begin();
-                vertex_format_add_position_3d();
-                vertex_format_add_texcoord();
-                _vertexFormat = vertex_format_end();
+                draw_sprite(_sprite, _j, _x + sprite_get_xoffset(_sprite), _y + sprite_get_yoffset(_sprite));
+                
+                _x += __cacheCellWidth;
+                if (_x >= HIGGS_SPRITE_CACHE_SURFACE_SIZE)
+                {
+                    _x = 0;
+                    _y += __cacheCellHeight;
+                }
+                
+                ++_j;
             }
             
-            var _vBuff = vertex_create_buffer();
-            vertex_begin(_vBuff, _vertexFormat);
-            
-            var _i = 0;
-            repeat(_count)
+            if (_y >= HIGGS_SPRITE_CACHE_SURFACE_SIZE)
             {
-                vertex_position_3d(_vBuff, -0.5, -0.5, _i); vertex_texcoord(_vBuff, 0, 0);
-                vertex_position_3d(_vBuff,  0.5, -0.5, _i); vertex_texcoord(_vBuff, 1, 0);
-                vertex_position_3d(_vBuff, -0.5,  0.5, _i); vertex_texcoord(_vBuff, 0, 1);
-                
-                vertex_position_3d(_vBuff,  0.5, -0.5, _i); vertex_texcoord(_vBuff, 1, 0);
-                vertex_position_3d(_vBuff,  0.5,  0.5, _i); vertex_texcoord(_vBuff, 1, 1);
-                vertex_position_3d(_vBuff, -0.5,  0.5, _i); vertex_texcoord(_vBuff, 0, 1);
-                
-                ++_i;
+                __HiggsError("Not enough room on cache surface");
             }
             
-            vertex_end(_vBuff);
-            vertex_freeze(_vBuff);
-            
-            return _vBuff;
+            _index += sprite_get_number(_sprite);
+            ++_i;
         }
         
-        __bufferCache.__size3  = _funcGenerateVertexBuffer( 3);
-        __bufferCache.__size6  = _funcGenerateVertexBuffer( 6);
-        __bufferCache.__size10 = _funcGenerateVertexBuffer(10);
-        __bufferCache.__size12 = _funcGenerateVertexBuffer(12);
-        __bufferCache.__size17 = _funcGenerateVertexBuffer(17);
+        surface_reset_target();
+        gpu_set_blendmode(bm_normal);
+        
+        __cacheSprite = sprite_create_from_surface(_surface, 0, 0, HIGGS_SPRITE_CACHE_SURFACE_SIZE, HIGGS_SPRITE_CACHE_SURFACE_SIZE, false, false, 0, 0);
+        surface_free(_surface);
+        
+        __cacheTexture = sprite_get_texture(__cacheSprite, 0);
+        __cacheCellUVs[0] = __cacheCellWidth;
+        __cacheCellUVs[1] = __cacheCellHeight;
+        __cacheCellUVs[2] = HIGGS_SPRITE_CACHE_SURFACE_SIZE;
     }
     
     return _system;

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"HiggsStarburst12",
+  "%Name":"HiggsBurst",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"HiggsStarburst12",
+  "name":"HiggsBurst",
   "parent":{
     "name":"Higgs",
     "path":"folders/Higgs.yy",

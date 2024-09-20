@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"HiggsSpriteCache",
   "parent":{
-    "name":"Sprite Cache",
-    "path":"folders/Higgs/Sprite Cache.yy",
+    "name":"Higgs",
+    "path":"folders/Higgs.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

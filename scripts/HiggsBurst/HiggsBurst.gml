@@ -1,11 +1,12 @@
 // Feather disable all
 
-function HiggsStarburst12() constructor
+function HiggsBurst() constructor
 {
     static _system = __HiggsSystem();
     
-    static _vertexBuffer = _system.__bufferCache.__size12;
-    static _texture      = sprite_get_texture(sStar, 0);
+    static _vertexBuffer = HiggsGetVertexBuffer(12);
+    static _texture      = _system.__cacheTexture;
+    static _cellUVs      = _system.__cacheCellUVs;
     static _lifeLength   = 25;
     
     __seed = __HiggsRandom();
@@ -36,14 +37,16 @@ function HiggsStarburst12() constructor
             return false;
         }
         
-        static _u_vPosition = shader_get_uniform(__shdHiggsStarburst12, "u_vPosition");
-        static _u_fSeed     = shader_get_uniform(__shdHiggsStarburst12, "u_fSeed");
-        static _u_fLife     = shader_get_uniform(__shdHiggsStarburst12, "u_fLife");
+        static _u_vPosition    = shader_get_uniform(__shdHiggsBurst, "u_vPosition");
+        static _u_fSeed        = shader_get_uniform(__shdHiggsBurst, "u_fSeed");
+        static _u_fLife        = shader_get_uniform(__shdHiggsBurst, "u_fLife");
+        static _u_vTextureData = shader_get_uniform(__shdHiggsBurst, "u_vTextureData");
         
-        HIGGS_SHADER_SET(__shdHiggsStarburst12);
+        HIGGS_SHADER_SET(__shdHiggsBurst);
         shader_set_uniform_f(_u_vPosition, _x, _y);
         shader_set_uniform_f(_u_fSeed, __seed);
         shader_set_uniform_f(_u_fLife, __lifetime / _lifeLength);
+        shader_set_uniform_f_array(_u_vTextureData, _cellUVs)
         vertex_submit(_vertexBuffer, pr_trianglelist, _texture);
         HIGGS_SHADER_RESET();
         

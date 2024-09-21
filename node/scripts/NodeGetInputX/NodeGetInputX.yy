@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"NodeGetInputX",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"NodeGetInputX",
+  "parent":{
+    "name":"node",
+    "path":"node.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

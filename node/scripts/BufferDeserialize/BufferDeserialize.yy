@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"BufferDeserialize",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"BufferDeserialize",
+  "parent":{
+    "name":"Functions",
+    "path":"folders/Functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

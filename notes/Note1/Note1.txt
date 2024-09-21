@@ -1,0 +1,6 @@
+- basic laws of motion (gravity, air resistance, wind)
+- particle rotation following motion
+- multiple stages per particle
+- child particles
+- animated sprites
+- more emitter shapes

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"DrawArrowThick",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"DrawArrowThick",
+  "parent":{
+    "name":"node",
+    "path":"node.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

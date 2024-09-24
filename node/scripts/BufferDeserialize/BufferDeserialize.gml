@@ -53,7 +53,7 @@ function BufferDeserialize(_buffer)
                 {
                     if (uuid == _uuid)
                     {
-                        _found = self;
+                        _found = id;
                         break;
                     }
                 }
@@ -66,7 +66,7 @@ function BufferDeserialize(_buffer)
                 --_j;
             }
             
-            variable_struct_remove(self, "tempOutLinkArray");
+            variable_struct_remove(id, "tempOutLinkArray");
         }
     }
 }

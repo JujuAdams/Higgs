@@ -14,7 +14,10 @@
     "name":"Modals",
     "path":"folders/Modals.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oModalParent",
+    "path":"objects/oModalParent/oModalParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

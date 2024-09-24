@@ -281,17 +281,11 @@ function ContextMenuOpen(_subject)
         var _menuJSON = [
             {
                 button: "Switch Project",
-                func: function()
-                {
-                    ModalCreateSwitchProject();
-                }
+                func: ModalCreateSwitchProject,
             },
             {
                 button: "Help!",
-                func: function()
-                {
-                    ModalCreateHelp();
-                }
+                func: ModalCreateHelp,
             },
         ];
         

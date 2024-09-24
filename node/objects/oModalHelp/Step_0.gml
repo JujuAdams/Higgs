@@ -1,6 +1,6 @@
 // Feather disable all
 
-if (current_time - createTime > 1000)
+if (current_time - createTime > 400)
 {
     if (mouse_check_button_pressed(mb_left))
     {

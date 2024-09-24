@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"BufferSerialize",
+  "%Name":"EffectPopulatePermanents",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"BufferSerialize",
+  "name":"EffectPopulatePermanents",
   "parent":{
     "name":"Effect",
     "path":"folders/Effect.yy",

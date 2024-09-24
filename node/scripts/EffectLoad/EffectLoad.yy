@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"BufferSerialize",
+  "%Name":"EffectLoad",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"BufferSerialize",
+  "name":"EffectLoad",
   "parent":{
     "name":"Effect",
     "path":"folders/Effect.yy",

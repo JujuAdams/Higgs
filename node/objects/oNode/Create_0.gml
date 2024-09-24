@@ -31,7 +31,8 @@ repeat(array_length(_inArray))
     var _handleInstance = instance_create_layer(_x, _y, "Instances", oHandleIn, {
         node: id,
         datatype: _handleData.datatype,
-        label:    _handleData.label,
+        label: _handleData.label,
+        index: _i,
         dX: _x - x,
         dY: _y - y,
     });
@@ -53,7 +54,8 @@ repeat(array_length(_outArray))
     var _handleInstance = instance_create_layer(_x, _y, "Instances", oHandleOut, {
         node: id,
         datatype: _handleData.datatype,
-        label:    _handleData.label,
+        label: _handleData.label,
+        index: _i,
         dX: _x - x,
         dY: _y - y,
     });

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"BufferSerialize",
+  "%Name":"ModalCreateConfiguration",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"BufferSerialize",
+  "name":"ModalCreateConfiguration",
   "parent":{
-    "name":"Effect",
-    "path":"folders/Effect.yy",
+    "name":"Modals",
+    "path":"folders/Modals.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

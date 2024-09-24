@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"BufferSerialize",
+  "%Name":"CameraRefocus",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"BufferSerialize",
+  "name":"CameraRefocus",
   "parent":{
-    "name":"Effect",
-    "path":"folders/Effect.yy",
+    "name":"node",
+    "path":"node.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -2,8 +2,8 @@
 
 if (instance_exists(oModalParent)) return;
 
-if (mouse_wheel_up()) viewPowerTarget -= 0.5;
-if (mouse_wheel_down()) viewPowerTarget += 0.5;
+if (mouse_wheel_up()) viewPowerTarget -= 0.25;
+if (mouse_wheel_down()) viewPowerTarget += 0.25;
 
 var _oldViewPower = viewPower;
 viewPower = lerp(viewPower, viewPowerTarget, 0.4);

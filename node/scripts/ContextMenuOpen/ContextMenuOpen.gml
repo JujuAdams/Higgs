@@ -204,6 +204,22 @@ function ContextMenuOpen(_subject)
                 ],
             },
             {
+                button: "Save",
+                func: function()
+                {
+                    var _path = "default.dat";
+                    EffectSave(_path);
+                    ModalCreateMessageTimed($"Saved effect {_path}");
+                }
+            },
+            {
+                button: "Refocus Camera",
+                func: function()
+                {
+                    CameraRefocus();
+                }
+            },
+            {
                 button: "Configuration",
                 func: function()
                 {
@@ -211,26 +227,55 @@ function ContextMenuOpen(_subject)
                 },
             },
             {
-                button: "Save",
-                func: function()
-                {
-                    ModalCreateMessageTimed("Saved!");
-                }
+                branch: "File Ops ...",
+                children: [
+                    {
+                        button: "Load",
+                        func: function()
+                        {
+                            var _path = "default.dat";
+                            EffectClear();
+                            EffectLoad(_path);
+                            ModalCreateMessageTimed($"Loaded effect {_path}");
+                            
+                            //ModalCreateLoad();
+                        }
+                    },
+                    {
+                        button: "New",
+                        func: function()
+                        {
+                            ModalCreateNew();
+                        }
+                    },
+                    {
+                        button: "Switch Project",
+                        func: function()
+                        {
+                            ModalCreateSwitchProject();
+                        }
+                    },
+                ],
             },
             {
-                button: "Load",
+                button: "Help!",
                 func: function()
                 {
-                    ModalCreateLoad();
+                    ModalCreateHelp();
                 }
             },
-            {
-                button: "New",
-                func: function()
-                {
-                    ModalCreateNew();
-                }
-            },
+        ];
+        
+        var _contextMenu = instance_create_layer(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), "ContextMenu", oContextMenu, {
+            roomX: mouse_x,
+            roomY: mouse_y,
+            subject: _subject,
+            menuJSON: _menuJSON,
+        });
+    }
+    else if (_subject.object_index == oApp)
+    {
+        var _menuJSON = [
             {
                 button: "Switch Project",
                 func: function()

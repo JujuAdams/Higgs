@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"BufferDeserialize",
   "parent":{
-    "name":"node",
-    "path":"node.yyp",
+    "name":"Effect",
+    "path":"folders/Effect.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

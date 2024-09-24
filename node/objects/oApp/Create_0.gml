@@ -11,4 +11,4 @@ windowHeight = window_get_height();
 
 surface_resize(application_surface, windowWidth, windowHeight);
 
-alarm[0] = 10;
+alarm[0] = 5;

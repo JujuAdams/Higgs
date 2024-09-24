@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"%effectName%",
+  "name":"%effectName%",
+  "parent":{
+    "name":"%projectName%",
+    "path":"%projectName%.yyp",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

@@ -56,27 +56,15 @@ function ContextMenuOpen(_subject)
             var _menuJSON = [
                 {
                     button: "New",
-                    func: function()
-                    {
-                        ModalCreateNew();
-                    }
+                    func: ModalCreateNew,
                 },
                 {
                     button: "Load",
-                    func: function()
-                    {
-                        var _path = "default.dat";
-                        EffectClear();
-                        EffectLoad(_path);
-                        ModalCreateMessageTimed($"Loaded effect {_path}");
-                    }
+                    func: ModalCreateLoad,
                 },
                 {
                     button: "Switch Project",
-                    func: function()
-                    {
-                        ModalCreateSwitchProject();
-                    }
+                    func: ModalCreateSwitchProject,
                 },
             ];
         }
@@ -245,10 +233,7 @@ function ContextMenuOpen(_subject)
                 },
                 {
                     button: "Refocus Camera",
-                    func: function()
-                    {
-                        CameraRefocus();
-                    }
+                    func: CameraRefocus,
                 },
                 {
                     button: "Configuration",
@@ -262,29 +247,15 @@ function ContextMenuOpen(_subject)
                     children: [
                         {
                             button: "New",
-                            func: function()
-                            {
-                                ModalCreateNew();
-                            }
+                            func: ModalCreateNew,
                         },
                         {
                             button: "Load",
-                            func: function()
-                            {
-                                var _path = "default.dat";
-                                EffectClear();
-                                EffectLoad(_path);
-                                ModalCreateMessageTimed($"Loaded effect {_path}");
-                                
-                                //ModalCreateLoad();
-                            }
+                            func: ModalCreateLoad,
                         },
                         {
                             button: "Switch Project",
-                            func: function()
-                            {
-                                ModalCreateSwitchProject();
-                            }
+                            func: ModalCreateSwitchProject,
                         },
                     ],
                 },
@@ -294,10 +265,7 @@ function ContextMenuOpen(_subject)
         array_push(_menuJSON,
             {
                 button: "Help!",
-                func: function()
-                {
-                    ModalCreateHelp();
-                }
+                func: ModalCreateHelp,
             }
         );
         

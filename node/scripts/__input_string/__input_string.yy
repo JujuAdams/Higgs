@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Script32",
+  "%Name":"__input_string",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Script32",
+  "name":"__input_string",
   "parent":{
     "name":"node",
     "path":"node.yyp",

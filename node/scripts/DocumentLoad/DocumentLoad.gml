@@ -94,14 +94,5 @@ function DocumentLoad(_path)
         projectPath: _path,
     });
     
-    if (array_length(_effectArray) <= 0)
-    {
-        var _next = ModalCreateNew;
-    }
-    else
-    {
-        var _next = ModalCreateLoad;
-    }
-    
-    ModalCreateMessageTimed($"Loaded {_path}", undefined, undefined, _next);
+    ModalCreateMessageTimed($"Loaded {_path}", undefined, undefined, (array_length(_effectArray) > 0)? ModalCreateLoad : undefined);
 }

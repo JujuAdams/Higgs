@@ -5,7 +5,15 @@ if (effectName == undefined)
     draw_set_color(c_white);
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
-    draw_text(display_get_gui_width()/2, display_get_gui_height()/2, "Right click and select \"New\" or \"Load\" to start editing an effect.");
+    
+    if (array_length(effectArray) > 0)
+    {
+        draw_text(display_get_gui_width()/2, display_get_gui_height()/2, "Right click and select \"New\" or \"Load\" to start editing an effect.");
+    }
+    else
+    {
+        draw_text(display_get_gui_width()/2, display_get_gui_height()/2, "Right click and select \"New\" to start editing an effect.");
+    }
 }
 else
 {

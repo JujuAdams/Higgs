@@ -5,13 +5,13 @@ var _path = _recentData[$ "projectPath"];
 
 if (_path == undefined)
 {
-    ModalCreateSwitchProject();
+    ModalCreateHelp(undefined, undefined, ModalCreateSwitchProject);
 }
 else
 {
     if (not file_exists(_path))
     {
-        ModalCreateMessage($"Could not find {_path}")
+        ModalCreateMessage($"Could not find {_path}", undefined, undefined, ModalCreateSwitchProject);
     }
     else
     {

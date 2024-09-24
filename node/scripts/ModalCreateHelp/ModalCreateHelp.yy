@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ModalCreateHelp",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ModalCreateHelp",
+  "parent":{
+    "name":"Modals",
+    "path":"folders/Modals.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

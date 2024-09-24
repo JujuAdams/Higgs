@@ -4,11 +4,11 @@ path = get_open_filename_ext("Project|*.yyp", "project.yyp", GM_project_filename
 
 if (not string_pos(".yyp", path))
 {
-    ModalCreateMessage("No project chosen");
+    ModalCreateMessageTimed("No project chosen");
 }
 else
 {
-    ModalCreateMessage($"Chose {filename_name(path)}");
+    ModalCreateMessageTimed($"Chose {filename_name(path)}");
     DocumentLoad(path);
 }
 

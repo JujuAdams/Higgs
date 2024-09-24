@@ -10,3 +10,8 @@ if ((window_get_width() > 0) && (window_get_height() > 0))
         surface_resize(application_surface, windowWidth, windowHeight);
     }
 }
+
+if (not instance_exists(oDocument))
+{
+    ContextMenuOpen(id);
+}

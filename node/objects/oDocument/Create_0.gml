@@ -1,9 +1,5 @@
 // Feather disable all
 
-randomize();
-
-draw_set_font(fMain);
-
 dragging = false;
 dragOnMiddleClick = false;
 dragX = 0;

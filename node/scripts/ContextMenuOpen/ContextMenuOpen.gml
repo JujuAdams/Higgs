@@ -214,7 +214,7 @@ function ContextMenuOpen(_subject)
                 button: "Save",
                 func: function()
                 {
-                    ModalCreateMessage("Saved!");
+                    ModalCreateMessageTimed("Saved!");
                 }
             },
             {
@@ -236,6 +236,13 @@ function ContextMenuOpen(_subject)
                 func: function()
                 {
                     ModalCreateSwitchProject();
+                }
+            },
+            {
+                button: "Help!",
+                func: function()
+                {
+                    ModalCreateHelp();
                 }
             },
         ];

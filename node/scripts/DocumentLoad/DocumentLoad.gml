@@ -11,5 +11,5 @@ function DocumentLoad(_path)
         projectPath: _path,
     });
     
-    ModalCreateMessage($"Loaded {_path}")
+    ModalCreateMessageTimed($"Loaded {_path}", undefined, undefined, ModalCreateLoad);
 }

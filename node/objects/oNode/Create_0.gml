@@ -11,7 +11,7 @@ var _outArray = nodeTypeData.out;
 
 var _handleHeight = 40*max(array_length(_inArray), array_length(_outArray));
 
-var _width  = 200;
+var _width  = 220;
 var _height = 80 + _handleHeight;
 
 image_xscale = _width  / sprite_get_width( sprite_index);

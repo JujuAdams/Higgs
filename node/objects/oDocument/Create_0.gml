@@ -11,6 +11,7 @@ dragY = 0;
 
 viewPower = 0;
 viewPowerTarget = 0;
+viewScale = 1;
 
 baseWidth  = camera_get_view_width( view_camera[0]);
 baseHeight = camera_get_view_height(view_camera[0]);

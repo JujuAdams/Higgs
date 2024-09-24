@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Error",
   "parent":{
-    "name":"Functions",
-    "path":"folders/Functions.yy",
+    "name":"node",
+    "path":"node.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

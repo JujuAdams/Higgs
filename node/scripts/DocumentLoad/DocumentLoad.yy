@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"DocumentLoad",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"DocumentLoad",
+  "parent":{
+    "name":"Document",
+    "path":"folders/Document.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

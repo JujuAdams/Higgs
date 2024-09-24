@@ -10,8 +10,8 @@
   "name":"oDocument",
   "overriddenProperties":[],
   "parent":{
-    "name":"node",
-    "path":"node.yyp",
+    "name":"Document",
+    "path":"folders/Document.yy",
   },
   "parentObjectId":null,
   "persistent":false,

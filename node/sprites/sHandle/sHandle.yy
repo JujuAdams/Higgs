@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"node",
-    "path":"node.yyp",
+    "name":"Graphics",
+    "path":"folders/Graphics.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

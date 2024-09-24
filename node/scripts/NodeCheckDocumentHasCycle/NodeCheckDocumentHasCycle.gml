@@ -2,9 +2,9 @@
 
 function NodeCheckDocumentHasCycle()
 {
-    var _safeMap = ds_map_create();
-    var _visitedMap = ds_map_create();
-    var _pendingMap = ds_map_create();
+    var _safeMap      = ds_map_create();
+    var _visitedMap   = ds_map_create();
+    var _pendingMap   = ds_map_create();
     var _pendingArray = [];
     
     ds_map_clear(_safeMap);

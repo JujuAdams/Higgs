@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ModalCreateSwitchProject",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ModalCreateSwitchProject",
+  "parent":{
+    "name":"Modals",
+    "path":"folders/Modals.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"NodeLayoutArray",
   "parent":{
-    "name":"node",
-    "path":"node.yyp",
+    "name":"Nodes",
+    "path":"folders/Nodes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

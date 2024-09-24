@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"InstanceGetHover",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"InstanceGetHover",
+  "parent":{
+    "name":"node",
+    "path":"node.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

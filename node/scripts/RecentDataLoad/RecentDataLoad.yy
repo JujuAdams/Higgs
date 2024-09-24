@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"RecentDataLoad",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"RecentDataLoad",
+  "parent":{
+    "name":"node",
+    "path":"node.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

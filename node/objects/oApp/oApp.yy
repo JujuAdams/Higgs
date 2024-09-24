@@ -1,13 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"oEdgeLink",
-  "eventList":[],
+  "%Name":"oApp",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"oEdgeLink",
+  "name":"oApp",
   "overriddenProperties":[],
   "parent":{
-    "name":"Edges",
-    "path":"folders/Edges.yy",
+    "name":"node",
+    "path":"node.yyp",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sHandle",
-    "path":"sprites/sHandle/sHandle.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

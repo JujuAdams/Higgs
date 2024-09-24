@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"NodeCheckDocumentHasCycle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"NodeCheckDocumentHasCycle",
+  "parent":{
+    "name":"Nodes",
+    "path":"folders/Nodes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

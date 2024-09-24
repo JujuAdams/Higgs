@@ -104,7 +104,14 @@ else
         }
         else if (mouse_check_button_pressed(mb_right))
         {
-            if ((hover.object_index == oNode) || (hover.object_index == oEdge))
+            if (hover.object_index == oNode)
+            {
+                if (not (hover.nodeTypeData[$ "permanent"] ?? false))
+                {
+                    instance_destroy(hover);
+                }
+            }
+            else if (hover.object_index == oEdge)
             {
                 instance_destroy(hover);
             }

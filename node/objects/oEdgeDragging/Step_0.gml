@@ -14,23 +14,27 @@ if (mouse_check_button_released(mb_left))
     
     if (instance_exists(_hover))
     {
-        if (inHandle == noone)
+        if (not instance_exists(inHandle))
         {
-            if (_hover.object_index == oHandleIn)
+            if ((_hover.object_index == oHandleIn) && (outHandle.datatype == _hover.datatype))
             {
-                if (outHandle.datatype == _hover.datatype)
+                var _edge = EdgeCreate(_hover, outHandle);
+                
+                if (NodeCheckDocumentHasCycle())
                 {
-                    EdgeCreate(_hover, outHandle);
+                    instance_destroy(_edge);
                 }
             }
         }
-        else if (outHandle == noone)
+        else if (not instance_exists(outHandle))
         {
-            if (_hover.object_index == oHandleOut)
+            if ((_hover.object_index == oHandleOut) && (inHandle.datatype == _hover.datatype))
             {
-                if (inHandle.datatype == _hover.datatype)
+                EdgeCreate(inHandle, _hover);
+                
+                if (NodeCheckDocumentHasCycle())
                 {
-                    EdgeCreate(inHandle, _hover);
+                    instance_destroy(_edge);
                 }
             }
         }

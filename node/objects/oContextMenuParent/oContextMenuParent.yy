@@ -1,16 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oModalSwitchProject",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"oContextMenuParent",
+  "eventList":[],
   "managed":true,
-  "name":"oModalSwitchProject",
+  "name":"oContextMenuParent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Modals",
-    "path":"folders/Modals.yy",
+    "name":"Context Menu",
+    "path":"folders/Context Menu.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sNode",
+    "path":"sprites/sNode/sNode.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

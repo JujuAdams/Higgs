@@ -14,7 +14,10 @@
     "name":"Context Menu",
     "path":"folders/Context Menu.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oContextMenuParent",
+    "path":"objects/oContextMenuParent/oContextMenuParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPixel",
-    "path":"sprites/sPixel/sPixel.yy",
+    "name":"sNode",
+    "path":"sprites/sNode/sNode.yy",
   },
   "spriteMaskId":null,
   "visible":true,

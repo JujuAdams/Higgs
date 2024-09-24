@@ -63,11 +63,11 @@ else
                 var _instance = instance_create_layer(_hover.x, _hover.y, "Edges", oEdgeDragging);
                 if (_hover.object_index == oHandleIn)
                 {
-                    _instance.inHandle = hover;
+                    _instance.inHandle = _hover;
                 }
                 else
                 {
-                    _instance.outHandle = hover;
+                    _instance.outHandle = _hover;
                 }
             }
         }

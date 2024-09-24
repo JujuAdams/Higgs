@@ -4,7 +4,7 @@
 
 function DocumentLoad(_path)
 {
-    var _instance = instance_create_layer(0, 0, "Instances", oDocument, { path: _path });
+    var _instance = instance_create_layer(0, 0, "Document", oDocument, { path: _path });
     
     //We loaded successfully, save this project path for later
     RecentDataSave({

@@ -4,6 +4,7 @@ global.nodeTypes = {
     
     addVec2: {
         label: "Add Vec2",
+        description: "Adds two vec2s together",
         
         in: [
             {
@@ -26,6 +27,7 @@ global.nodeTypes = {
     
     multiply: {
         label: "Multiply",
+        description: "Multiplies a vec2 by a float",
         
         in: [
             {
@@ -52,6 +54,7 @@ global.nodeTypes = {
     
     vertexPosition: {
         label: "Vertex Position",
+        description: "Outputs the vertex position as a vec2\nThe x and y values will be either -0.5 or +0.5",
         permanent: true,
         
         in: [],
@@ -66,6 +69,7 @@ global.nodeTypes = {
     
     particleIndex: {
         label: "Particle Index",
+        description: "Outputs the particle's index as a float",
         permanent: true,
         
         in: [],
@@ -80,6 +84,7 @@ global.nodeTypes = {
     
     emitterPosition: {
         label: "Emitter Position",
+        description: "Outputs the emitter's world-space position as a vec2",
         permanent: true,
         
         in: [],
@@ -94,6 +99,22 @@ global.nodeTypes = {
     
     time: {
         label: "Time",
+        description: "Outputs the emitter's time as a float",
+        permanent: true,
+        
+        in: [],
+        
+        out: [
+            {
+                label: "time",
+                datatype: "float",
+            },
+        ],
+    },
+    
+    age: {
+        label: "Age",
+        description: "Outputs the particle's age as a float",
         permanent: true,
         
         in: [],
@@ -112,6 +133,7 @@ global.nodeTypes = {
     
     constFloat: {
         label: "Const Float",
+        description: "Outputs a constant float",
         
         in: [],
         
@@ -125,6 +147,7 @@ global.nodeTypes = {
     
     constVec2: {
         label: "Const Vec2",
+        description: "Outputs a constant vec2",
         
         in: [],
         
@@ -138,6 +161,7 @@ global.nodeTypes = {
     
     constVec3: {
         label: "Const Vec3",
+        description: "Outputs a constant vec3",
         
         in: [],
         
@@ -151,6 +175,7 @@ global.nodeTypes = {
     
     constVec4: {
         label: "Const Vec4",
+        description: "Outputs a constant vec4",
         
         in: [],
         
@@ -168,6 +193,7 @@ global.nodeTypes = {
     
     "random": {
         label: "Random (0-1)",
+        description: "Outputs a random value between 0 and 1",
         
         in: [],
         
@@ -181,6 +207,7 @@ global.nodeTypes = {
     
     randomVector: {
         label: "Random Vector",
+        description: "Outputs a random normalized vector as a vec2",
         
         in: [],
         
@@ -197,6 +224,7 @@ global.nodeTypes = {
     
     uniformFloat: {
         label: "Uniform Float",
+        description: "Outputs a float passed as a uniform parameter",
         
         in: [],
         
@@ -210,6 +238,7 @@ global.nodeTypes = {
     
     uniformVec2: {
         label: "Uniform Vec2",
+        description: "Outputs a vec2 passed as a uniform parameter",
         
         in: [],
         
@@ -223,6 +252,7 @@ global.nodeTypes = {
     
     uniformVec3: {
         label: "Uniform Vec3",
+        description: "Outputs a vec3 passed as a uniform parameter",
         
         in: [],
         
@@ -236,6 +266,7 @@ global.nodeTypes = {
     
     uniformVec4: {
         label: "Uniform Vec4",
+        description: "Outputs a vec4 passed as a uniform parameter",
         
         in: [],
         
@@ -253,6 +284,7 @@ global.nodeTypes = {
     
     outputPosition: {
         label: "Output Position",
+        description: "Receives a vec2 for the position of the vertex",
         permanent: true,
         
         in: [
@@ -267,6 +299,7 @@ global.nodeTypes = {
     
     outputSprite: {
         label: "Output Sprite",
+        description: "Receives a float for the sprite index of the particle",
         permanent: true,
         
         in: [
@@ -281,6 +314,7 @@ global.nodeTypes = {
     
     outputImage: {
         label: "Output Image",
+        description: "Receives a float for the image index of the particle",
         permanent: true,
         
         in: [
@@ -295,6 +329,7 @@ global.nodeTypes = {
     
     outputColor: {
         label: "Output Color",
+        description: "Receives a vec4 for the color of the particle\nThe x/y/z/w components map to r/g/b/a",
         permanent: true,
         
         in: [
@@ -313,6 +348,7 @@ global.nodeTypes = {
     
     expandVec2: {
         label: "Expand Vec2",
+        description: "Expands a vec2 into two floats",
         
         in: [
             {
@@ -335,6 +371,7 @@ global.nodeTypes = {
     
     expandVec3: {
         label: "Expand Vec3",
+        description: "Expands a vec3 into three floats",
         
         in: [
             {
@@ -361,6 +398,7 @@ global.nodeTypes = {
     
     expandVec4: {
         label: "Expand Vec4",
+        description: "Expands a vec4 into four floats",
         
         in: [
             {
@@ -395,6 +433,7 @@ global.nodeTypes = {
     
     combineVec2: {
         label: "Combine Vec2",
+        description: "Combines two floats into a vec2",
         
         in: [
             {
@@ -417,6 +456,7 @@ global.nodeTypes = {
     
     combineVec3: {
         label: "Combine Vec3",
+        description: "Combines three floats into a vec3",
         
         in: [
             {
@@ -443,6 +483,7 @@ global.nodeTypes = {
     
     combineVec4: {
         label: "Combine Vec4",
+        description: "Combines four floats into a vec4",
         
         in: [
             {

@@ -17,7 +17,7 @@ function ContextMenuOpen(_subject)
                     button: "Info",
                     func: function()
                     {
-                        
+                        ModalCreateMessage(subject.nodeTypeData[$ "description"] ?? "No description found", x, y);
                     }
                 },
             ];
@@ -29,7 +29,7 @@ function ContextMenuOpen(_subject)
                     button: "Info",
                     func: function()
                     {
-                        
+                        ModalCreateMessage(subject.nodeTypeData[$ "description"] ?? "No description found", x, y);
                     }
                 },
                 {
@@ -43,6 +43,8 @@ function ContextMenuOpen(_subject)
         }
         
         var _contextMenu = instance_create_layer(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), "ContextMenu", oContextMenu, {
+            roomX: mouse_x,
+            roomY: mouse_y,
             subject: _subject,
             menuJSON: _menuJSON,
         });
@@ -51,16 +53,16 @@ function ContextMenuOpen(_subject)
     {
         var _menuJSON = [
             {
-                branch: "Node",
+                branch: "Node ...",
                 children: [
                     {
-                        branch: "Arithmetic",
+                        branch: "Arithmetic ...",
                         children: [
                             {
                                 button: "Add",
                                 func: function()
                                 {
-                                    
+                                    NodeCreate(topLevel.roomX, topLevel.roomY, "addVec2");
                                 },
                             },
                             {
@@ -115,7 +117,7 @@ function ContextMenuOpen(_subject)
                         ],
                     },
                     {
-                        branch: "Random",
+                        branch: "Random ...",
                         children: [
                             {
                                 button: "Random 0-1",
@@ -141,7 +143,7 @@ function ContextMenuOpen(_subject)
                         ],
                     },
                     {
-                        branch: "Motion",
+                        branch: "Motion ...",
                         children: [
                             {
                                 button: "Projectile",
@@ -160,7 +162,7 @@ function ContextMenuOpen(_subject)
                         ],
                     },
                     {
-                        branch: "Easing",
+                        branch: "Easing ...",
                         children: [
                             {
                                 button: "Quadratic",
@@ -202,7 +204,7 @@ function ContextMenuOpen(_subject)
                 ],
             },
             {
-                button: "Sprite Config",
+                button: "Configuration",
                 func: function()
                 {
                     
@@ -239,6 +241,8 @@ function ContextMenuOpen(_subject)
         ];
         
         var _contextMenu = instance_create_layer(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), "ContextMenu", oContextMenu, {
+            roomX: mouse_x,
+            roomY: mouse_y,
             subject: _subject,
             menuJSON: _menuJSON,
         });

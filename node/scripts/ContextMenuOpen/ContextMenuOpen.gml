@@ -14,7 +14,7 @@ function ContextMenuOpen(_subject)
         {
             var _menuJSON = [
                 {
-                    label: "Info",
+                    button: "Info",
                     func: function()
                     {
                         
@@ -26,17 +26,17 @@ function ContextMenuOpen(_subject)
         {
             var _menuJSON = [
                 {
-                    label: "Delete",
-                    func: function()
-                    {
-                        instance_destroy(subject);
-                    }
-                },
-                {
-                    label: "Info",
+                    button: "Info",
                     func: function()
                     {
                         
+                    }
+                },
+                {
+                    button: "Delete",
+                    func: function()
+                    {
+                        instance_destroy(subject);
                     }
                 },
             ];
@@ -50,12 +50,6 @@ function ContextMenuOpen(_subject)
     else if (_subject.object_index == oDocument)
     {
         var _menuJSON = [
-            {
-                branch: "Recent",
-                children: [
-                
-                ],
-            },
             {
                 branch: "Node",
                 children: [

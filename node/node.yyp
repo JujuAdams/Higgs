@@ -83,7 +83,7 @@
     {"id":{"name":"PointLineDistance","path":"scripts/PointLineDistance/PointLineDistance.yy",},},
     {"id":{"name":"RecentDataLoad","path":"scripts/RecentDataLoad/RecentDataLoad.yy",},},
     {"id":{"name":"RecentDataSave","path":"scripts/RecentDataSave/RecentDataSave.yy",},},
-    {"id":{"name":"Shader1","path":"shaders/Shader1/Shader1.yy",},},
+    {"id":{"name":"Script32","path":"scripts/Script32/Script32.yy",},},
     {"id":{"name":"sHandle","path":"sprites/sHandle/sHandle.yy",},},
     {"id":{"name":"sNode","path":"sprites/sNode/sNode.yy",},},
     {"id":{"name":"sPixel","path":"sprites/sPixel/sPixel.yy",},},

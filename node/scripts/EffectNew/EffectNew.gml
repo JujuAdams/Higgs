@@ -55,9 +55,11 @@ function EffectNew(_name)
     
     EffectClear();
     EffectPopulatePermanents();
-    
     CameraRefocus();
-    ModalCreateConfiguration();
     
-    oDocument.effectPath = _path;
+    array_push(oDocument.effectArray, _name);
+    array_sort(oDocument.effectArray, true);
+    oDocument.effectName = _name;
+    
+    ModalCreateMessageTimed($"Created new effect \"{_name}", undefined, undefined, ModalCreateConfiguration);
 }

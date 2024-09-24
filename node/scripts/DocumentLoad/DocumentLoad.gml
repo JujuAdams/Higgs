@@ -81,6 +81,8 @@ function DocumentLoad(_path)
     EffectClear();
     instance_destroy(oDocument);
     
+    array_sort(_effectArray, true);
+    
     var _instance = instance_create_layer(0, 0, "Document", oDocument,
     {
         projectPath: _path,

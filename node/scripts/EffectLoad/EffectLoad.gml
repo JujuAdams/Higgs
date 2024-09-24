@@ -1,8 +1,8 @@
 // Feather disable all
 
-/// @param path
+/// @param name
 
-function EffectLoad(_path)
+function EffectLoad(_name)
 {
     if (not instance_exists(oDocument)) return;
     
@@ -11,5 +11,5 @@ function EffectLoad(_path)
     buffer_delete(_buffer);
     
     CameraRefocus();
-    oDocument.effectPath = _path;
+    oDocument.effectName = _name;
 }

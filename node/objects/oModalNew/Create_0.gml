@@ -1,3 +1,5 @@
 // Feather disable all
 
-EffectNew("__shdTest");
+input_string_set("");
+
+text = "";

@@ -51,7 +51,7 @@ function ContextMenuOpen(_subject)
     }
     else if (_subject.object_index == oDocument)
     {
-        if (_subject.effectPath == undefined)
+        if (_subject.effectName == undefined)
         {
             var _menuJSON = [
                 {

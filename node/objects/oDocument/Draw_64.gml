@@ -1,6 +1,6 @@
 // Feather disable all
 
-if (effectPath == undefined)
+if (effectName == undefined)
 {
     draw_set_color(c_white);
     draw_set_halign(fa_center);
@@ -13,12 +13,12 @@ else
     draw_set_valign(fa_top);
     draw_set_color(c_black);
     draw_set_alpha(0.5);
-    draw_text(13, 13, effectPath);
+    draw_text(13, 13, effectName);
     draw_set_alpha(1);
-    draw_text( 9, 10, effectPath);
-    draw_text(11, 10, effectPath);
-    draw_text(10,  9, effectPath);
-    draw_text(10, 11, effectPath);
+    draw_text( 9, 10, effectName);
+    draw_text(11, 10, effectName);
+    draw_text(10,  9, effectName);
+    draw_text(10, 11, effectName);
     draw_set_color(c_white);
-    draw_text(10, 10, effectPath);
+    draw_text(10, 10, effectName);
 }

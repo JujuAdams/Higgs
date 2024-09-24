@@ -1,6 +1,6 @@
 // Feather disable all
 
-effectPath = undefined;
+effectName = undefined;
 
 dragging = false;
 dragOnMiddleClick = false;

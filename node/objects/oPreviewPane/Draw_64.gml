@@ -21,11 +21,12 @@ repeat(array_length(particleArray))
 {
     with(particleArray[_i])
     {
-        var _vertexPosition = vertexArray[0].outputStruct[$ "outputPosition"];
-        var _x = array_length(_vertexPosition)? _vertexPosition[0] : 0;
-        var _y = array_length(_vertexPosition)? _vertexPosition[1] : 0;
-        
-        draw_circle(_x, _y, 20, true);
+        draw_primitive_begin(pr_trianglestrip);
+        PreviewDrawVertex(vertexArray[0]);
+        PreviewDrawVertex(vertexArray[1]);
+        PreviewDrawVertex(vertexArray[2]);
+        PreviewDrawVertex(vertexArray[3]);
+        draw_primitive_end();
     }
     
     ++_i;

@@ -13,7 +13,12 @@ function NodeCopyFilterConnectedOut(_node, _array = [])
         var _j = 0;
         repeat(array_length(_edgeArray))
         {
-            array_push(_array, _edgeArray[_i].inHandle.node);
+            var _handle = _edgeArray[_i].inHandle;
+            if (instance_exists(_handle))
+            {
+                array_push(_array, _handle.node);
+            }
+            
             ++_j;
         }
         

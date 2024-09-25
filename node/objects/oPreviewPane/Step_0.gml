@@ -23,36 +23,36 @@ if (open)
                 {
                     inputStruct: {
                         vertexPosition: [-0.5, -0.5],
-                        particleIndex: 0,
+                        particleIndex: [0],
                         emitterPosition: [_mouseX, _mouseY],
-                        age: 0,
+                        age: [0],
                     },
                     outputStruct: {},
                 },
                 {
                     inputStruct: {
                         vertexPosition: [0.5, -0.5],
-                        particleIndex: 0,
+                        particleIndex: [0],
                         emitterPosition: [_mouseX, _mouseY],
-                        age: 0,
+                        age: [0],
                     },
                     outputStruct: {},
                 },
                 {
                     inputStruct: {
                         vertexPosition: [-0.5, 0.5],
-                        particleIndex: 0,
+                        particleIndex: [0],
                         emitterPosition: [_mouseX, _mouseY],
-                        age: 0,
+                        age: [0],
                     },
                     outputStruct: {},
                 },
                 {
                     inputStruct: {
                         vertexPosition: [0.5, 0.5],
-                        particleIndex: 0,
+                        particleIndex: [0],
                         emitterPosition: [_mouseX, _mouseY],
-                        age: 0,
+                        age: [0],
                     },
                     outputStruct: {},
                 },
@@ -74,7 +74,7 @@ if (open)
             {
                 with(vertexArray[_j])
                 {
-                    inputStruct.age = other.age;
+                    inputStruct.age[0] = other.age;
                     outputStruct = PreviewExecute(inputStruct);
                 }
                 

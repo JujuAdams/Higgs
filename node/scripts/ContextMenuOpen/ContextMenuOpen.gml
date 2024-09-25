@@ -95,7 +95,7 @@ function ContextMenuOpen(_subject)
                                     button: "Multiply",
                                     func: function()
                                     {
-                                        
+                                        NodeCreate(topLevel.roomX, topLevel.roomY, "multiply");
                                     },
                                 },
                                 {

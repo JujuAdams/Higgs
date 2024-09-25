@@ -21,6 +21,7 @@
   },
   "name":"Higgs",
   "resources":[
+    {"id":{"name":"TestAsset","path":"shaders/TestAsset/TestAsset.yy",},},
     {"id":{"name":"Note1","path":"notes/Note1/Note1.yy",},},
     {"id":{"name":"oTest","path":"objects/oTest/oTest.yy",},},
     {"id":{"name":"rMain","path":"rooms/rMain/rMain.yy",},},

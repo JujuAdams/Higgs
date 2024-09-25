@@ -55,7 +55,7 @@ function DocumentLoad(_path)
                 buffer_delete(_buffer);
                 
                 //Only search the first 50 characters as an early out
-                var _startPos = string_pos(HIGGS_HEADER, string_copy(_string, 1, 50));
+                var _startPos = string_pos(HIGGS_HEADER, _string);
                 if (_startPos > 0)
                 {
                     var _buffer = buffer_load(_resourceAbsolutePath);

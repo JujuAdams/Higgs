@@ -19,20 +19,12 @@ function EffectNew(_name)
         return;
     }
     
-    file_copy("default.vsh", $"{_newDirectory}{_name}.vsh");
-    file_copy("default.fsh", $"{_newDirectory}{_name}.fsh");
+    //Add this new effect to our internal tracking
+    oDocument.effectName = _name;
+    array_push(oDocument.effectArray, _name);
+    array_sort(oDocument.effectArray, true);
     
-    var _buffer = buffer_load("default.yy");
-    var _string = buffer_read(_buffer, buffer_text);
-    buffer_delete(_buffer);
-    
-    _string = string_replace_all(_string, "%effectName%", _name);
-    _string = string_replace_all(_string, "%projectName%", _projectName);
-    
-    var _buffer = buffer_create(1024, buffer_grow, 1);
-    buffer_write(_buffer, buffer_text, _string);
-    buffer_save_ext(_buffer, $"{_newDirectory}{_name}.yy", 0, buffer_tell(_buffer));
-    
+    //Add an entry to the project .yyp
     var _buffer = buffer_load(oDocument.projectPath);
     var _string = buffer_read(_buffer, buffer_text);
     buffer_delete(_buffer);
@@ -53,13 +45,28 @@ function EffectNew(_name)
     buffer_save_ext(_buffer, oDocument.projectPath, 0, buffer_tell(_buffer));
     buffer_delete(_buffer);
     
+    //Save out a new .yy file
+    var _buffer = buffer_load("default.yy");
+    var _string = buffer_read(_buffer, buffer_text);
+    buffer_delete(_buffer);
+    
+    _string = string_replace_all(_string, "%effectName%", _name);
+    _string = string_replace_all(_string, "%projectName%", _projectName);
+    
+    var _buffer = buffer_create(1024, buffer_grow, 1);
+    buffer_write(_buffer, buffer_text, _string);
+    buffer_save_ext(_buffer, $"{_newDirectory}{_name}.yy", 0, buffer_tell(_buffer));
+    
+    //Copy the default fragment shader
+    file_copy("default.fsh", $"{_newDirectory}{_name}.fsh");
+    
+    //Clear out the document
     EffectClear();
     EffectPopulatePermanents();
     CameraRefocus();
     
-    array_push(oDocument.effectArray, _name);
-    array_sort(oDocument.effectArray, true);
-    oDocument.effectName = _name;
+    //Save the vertex shader
+    EffectSave(false);
     
     ModalCreateMessageTimed($"Created new effect \"{_name}", undefined, undefined, ModalCreateConfiguration);
 }

@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"TestAsset",
+  "name":"TestAsset",
+  "parent":{
+    "name":"Higgs",
+    "path":"Higgs.yyp",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

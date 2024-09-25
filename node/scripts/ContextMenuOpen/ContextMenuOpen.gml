@@ -269,12 +269,7 @@ function ContextMenuOpen(_subject)
                 },
                 {
                     button: "Save",
-                    func: function()
-                    {
-                        var _path = "default.dat";
-                        EffectSave(_path);
-                        ModalCreateMessageTimed($"Saved effect {_path}");
-                    }
+                    func: EffectSave,
                 },
                 {
                     button: "Refocus Camera",

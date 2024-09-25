@@ -42,6 +42,10 @@ else if (dragging)
         if (not mouse_check_button(mb_left)) dragging = false;
     }
 }
+else if (keyboard_check(vk_control) && keyboard_check_pressed(ord("S")))
+{
+    EffectSave();
+}
 else
 {
     var _hover = InstanceGetHover(mouse_x, mouse_y);

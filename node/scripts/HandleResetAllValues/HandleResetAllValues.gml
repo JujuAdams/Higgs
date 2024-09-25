@@ -2,7 +2,7 @@
 
 function HandleResetAllValues()
 {
-    with(oHandleParent)
+    with(oHandleIn)
     {
         previewValue    = undefined;
         previewValueSet = false;

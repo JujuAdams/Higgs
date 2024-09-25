@@ -4,6 +4,8 @@
 
 function PreviewExecute(_inputStruct)
 {
+    HandleResetAllValues();
+    
     global.previewInputStruct  = _inputStruct;
     global.previewOutputStruct = {};
     

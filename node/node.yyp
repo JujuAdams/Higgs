@@ -94,8 +94,6 @@
     {"id":{"name":"NodeGetHandleOutCount","path":"scripts/NodeGetHandleOutCount/NodeGetHandleOutCount.yy",},},
     {"id":{"name":"NodeLayoutArray","path":"scripts/NodeLayoutArray/NodeLayoutArray.yy",},},
     {"id":{"name":"PointLineDistance","path":"scripts/PointLineDistance/PointLineDistance.yy",},},
-    {"id":{"name":"PreviewCreate","path":"scripts/PreviewCreate/PreviewCreate.yy",},},
-    {"id":{"name":"PreviewDraw","path":"scripts/PreviewDraw/PreviewDraw.yy",},},
     {"id":{"name":"PreviewExecute","path":"scripts/PreviewExecute/PreviewExecute.yy",},},
     {"id":{"name":"PreviewGetHandleIn","path":"scripts/PreviewGetHandleIn/PreviewGetHandleIn.yy",},},
     {"id":{"name":"PreviewGetInput","path":"scripts/PreviewGetInput/PreviewGetInput.yy",},},

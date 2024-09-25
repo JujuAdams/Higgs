@@ -171,6 +171,27 @@ function ContextMenuOpen(_subject)
                                         NodeCreate(topLevel.roomX, topLevel.roomY, "constFloat");
                                     },
                                 },
+                                {
+                                    button: "Constant vec2",
+                                    func: function()
+                                    {
+                                        NodeCreate(topLevel.roomX, topLevel.roomY, "constVec2");
+                                    },
+                                },
+                                {
+                                    button: "Constant vec3",
+                                    func: function()
+                                    {
+                                        NodeCreate(topLevel.roomX, topLevel.roomY, "constVec3");
+                                    },
+                                },
+                                {
+                                    button: "Constant vec4",
+                                    func: function()
+                                    {
+                                        NodeCreate(topLevel.roomX, topLevel.roomY, "constVec4");
+                                    },
+                                },
                             ],
                         },
                         {

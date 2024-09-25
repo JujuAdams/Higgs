@@ -1,4 +1,4 @@
 // Feather disable all
 
-previewValue = 0;
+previewValue = [0];
 previewValueSet = true;

@@ -58,7 +58,7 @@ global.nodeTypes = {
         {
             var _a = PreviewGetHandleIn(id, 0, 2);
             var _b = PreviewGetHandleIn(id, 1, 1);
-            PreviewSetHandleOut(id, 0, [_a[0]*_b, _a[1]*_b]);
+            PreviewSetHandleOut(id, 0, [_a[0]*_b[0], _a[1]*_b[0]]);
         },
     },
     
@@ -176,7 +176,7 @@ global.nodeTypes = {
         
         previewFunc: function()
         {
-            PreviewSetHandleOut(id, 0, PreviewGetValue(id, 0));
+            PreviewSetHandleOut(id, 0, [PreviewGetHandleIn(id, 0, 1)[0]]);
         },
     },
     
@@ -185,7 +185,18 @@ global.nodeTypes = {
         description: "Outputs a constant vec2",
         inputNode: true,
         
-        in: [],
+        in: [
+            {
+                label: "x",
+                constant: true,
+                datatype: "float",
+            },
+            {
+                label: "y",
+                constant: true,
+                datatype: "float",
+            },
+        ],
         
         out: [
             {
@@ -196,7 +207,7 @@ global.nodeTypes = {
         
         previewFunc: function()
         {
-            PreviewSetHandleOut(id, 0, [PreviewGetValue(id, 0), PreviewGetValue(id, 1)]);
+            PreviewSetHandleOut(id, 0, [PreviewGetHandleIn(id, 0, 1)[0], PreviewGetHandleIn(id, 1, 1)[0]]);
         },
     },
     
@@ -205,7 +216,23 @@ global.nodeTypes = {
         description: "Outputs a constant vec3",
         inputNode: true,
         
-        in: [],
+        in: [
+            {
+                label: "x",
+                constant: true,
+                datatype: "float",
+            },
+            {
+                label: "y",
+                constant: true,
+                datatype: "float",
+            },
+            {
+                label: "z",
+                constant: true,
+                datatype: "float",
+            },
+        ],
         
         out: [
             {
@@ -216,7 +243,7 @@ global.nodeTypes = {
         
         previewFunc: function()
         {
-            PreviewSetHandleOut(id, 0, [PreviewGetValue(id, 0), PreviewGetValue(id, 1), PreviewGetValue(id, 2)]);
+            PreviewSetHandleOut(id, 0, [PreviewGetValue(id, 0)[0], PreviewGetValue(id, 1)[0], PreviewGetValue(id, 2)[0]]);
         },
     },
     
@@ -225,7 +252,28 @@ global.nodeTypes = {
         description: "Outputs a constant vec4",
         inputNode: true,
         
-        in: [],
+        in: [
+            {
+                label: "x",
+                constant: true,
+                datatype: "float",
+            },
+            {
+                label: "y",
+                constant: true,
+                datatype: "float",
+            },
+            {
+                label: "z",
+                constant: true,
+                datatype: "float",
+            },
+            {
+                label: "w",
+                constant: true,
+                datatype: "float",
+            },
+        ],
         
         out: [
             {
@@ -236,7 +284,7 @@ global.nodeTypes = {
         
         previewFunc: function()
         {
-            PreviewSetHandleOut(id, 0, [PreviewGetValue(id, 0), PreviewGetValue(id, 1), PreviewGetValue(id, 2), PreviewGetValue(id, 3)]);
+            PreviewSetHandleOut(id, 0, [PreviewGetValue(id, 0)[0], PreviewGetValue(id, 1)[0], PreviewGetValue(id, 2)[0], PreviewGetValue(id, 3)[0]]);
         },
     },
     
@@ -591,7 +639,7 @@ global.nodeTypes = {
         
         previewFunc: function()
         {
-            PreviewSetHandleOut(id, 0, [PreviewGetHandleIn(id, 0, 1), PreviewGetHandleIn(id, 1, 1)]);
+            PreviewSetHandleOut(id, 0, [PreviewGetHandleIn(id, 0, 1)[0], PreviewGetHandleIn(id, 1, 1)[0]]);
         },
     },
     
@@ -623,7 +671,7 @@ global.nodeTypes = {
         
         previewFunc: function()
         {
-            PreviewSetHandleOut(id, 0, [PreviewGetHandleIn(id, 0, 1), PreviewGetHandleIn(id, 1, 1), PreviewGetHandleIn(id, 2, 1)]);
+            PreviewSetHandleOut(id, 0, [PreviewGetHandleIn(id, 0, 1)[0], PreviewGetHandleIn(id, 1, 1)[0], PreviewGetHandleIn(id, 2, 1)[0]]);
         },
     },
     
@@ -659,7 +707,7 @@ global.nodeTypes = {
         
         previewFunc: function()
         {
-            PreviewSetHandleOut(id, 0, [PreviewGetHandleIn(id, 0, 1), PreviewGetHandleIn(id, 1, 1), PreviewGetHandleIn(id, 2, 1), PreviewGetHandleIn(id, 3, 1)]);
+            PreviewSetHandleOut(id, 0, [PreviewGetHandleIn(id, 0, 1)[0], PreviewGetHandleIn(id, 1, 1)[0], PreviewGetHandleIn(id, 2, 1)[0], PreviewGetHandleIn(id, 3, 1)[0]]);
         },
     },
 };

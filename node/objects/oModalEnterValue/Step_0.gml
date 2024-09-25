@@ -10,7 +10,7 @@ else if (keyboard_check_pressed(vk_enter))
 {
     try
     {
-        constantHandle.previewValue = real(input_string_get());
+        constantHandle.previewValue = [real(input_string_get())];
     }
     catch(_error)
     {

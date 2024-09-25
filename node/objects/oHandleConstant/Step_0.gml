@@ -2,4 +2,4 @@
 
 event_inherited();
 
-label = string(previewValue);
+label = string(previewValue[0]);

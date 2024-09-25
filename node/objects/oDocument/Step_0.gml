@@ -2,6 +2,14 @@
 
 if (instance_exists(oModalParent)) return;
 
+if (oPreviewPane.open
+&& point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
+                        oPreviewPane.panelX, oPreviewPane.panelY,
+                        oPreviewPane.panelX + oPreviewPane.panelWidth, oPreviewPane.panelY + oPreviewPane.panelHeight))
+{
+    return;
+}
+
 if (mouse_wheel_up()) viewPowerTarget -= 0.25;
 if (mouse_wheel_down()) viewPowerTarget += 0.25;
 

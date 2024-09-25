@@ -6,6 +6,8 @@ if (mouse_check_button_released(mb_left))
     
     with(oHandleParent)
     {
+        if (object_index == oHandleConstant) continue;
+        
         if (point_in_rectangle(mouse_x, mouse_y, bbox_left, bbox_top, bbox_right, bbox_bottom))
         {
             _hover = id;

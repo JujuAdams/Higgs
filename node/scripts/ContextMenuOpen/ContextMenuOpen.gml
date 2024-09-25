@@ -162,6 +162,18 @@ function ContextMenuOpen(_subject)
                             ],
                         },
                         {
+                            branch: "Constants ...",
+                            children: [
+                                {
+                                    button: "Constant float",
+                                    func: function()
+                                    {
+                                        NodeCreate(topLevel.roomX, topLevel.roomY, "constFloat");
+                                    },
+                                },
+                            ],
+                        },
+                        {
                             branch: "Expand & Combine ...",
                             children: [
                                 {

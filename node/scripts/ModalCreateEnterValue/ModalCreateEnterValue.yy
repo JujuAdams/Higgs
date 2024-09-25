@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ModalCreateEnterValue",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ModalCreateEnterValue",
+  "parent":{
+    "name":"Modals",
+    "path":"folders/Modals.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

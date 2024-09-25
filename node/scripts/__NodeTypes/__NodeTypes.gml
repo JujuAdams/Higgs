@@ -159,7 +159,13 @@ global.nodeTypes = {
         description: "Outputs a constant float",
         inputNode: true,
         
-        in: [],
+        in: [
+            {
+                label: "value",
+                constant: true,
+                datatype: "float",
+            },
+        ],
         
         out: [
             {
@@ -170,7 +176,7 @@ global.nodeTypes = {
         
         previewFunc: function()
         {
-            PreviewSetHandleOut(id, 0, [PreviewGetValue(id, 0)]);
+            PreviewSetHandleOut(id, 0, PreviewGetValue(id, 0));
         },
     },
     

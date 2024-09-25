@@ -60,14 +60,21 @@ else
             }
             else if (object_is_ancestor(_hover.object_index, oHandleParent))
             {
-                var _instance = instance_create_layer(_hover.x, _hover.y, "Edges", oEdgeDragging);
-                if (_hover.object_index == oHandleIn)
+                if (_hover.object_index == oHandleConstant)
                 {
-                    _instance.inHandle = _hover;
+                    ModalCreateEnterValue(_hover);
                 }
                 else
                 {
-                    _instance.outHandle = _hover;
+                    var _instance = instance_create_layer(_hover.x, _hover.y, "Edges", oEdgeDragging);
+                    if (_hover.object_index == oHandleIn)
+                    {
+                        _instance.inHandle = _hover;
+                    }
+                    else if (_hover.object_index == oHandleOut)
+                    {
+                        _instance.outHandle = _hover;
+                    }
                 }
             }
         }

@@ -14,4 +14,10 @@ function HandleIsConnected(_handle)
     {
         return (array_length(edgeArray) > 0);
     }
+    else if (_handle.object_index == oHandleConstant)
+    {
+        return true;
+    }
+    
+    return false;
 }

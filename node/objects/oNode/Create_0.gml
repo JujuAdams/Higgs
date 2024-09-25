@@ -30,7 +30,9 @@ repeat(array_length(_inArray))
 {
     var _handleData = _inArray[_i];
     
-    var _handleInstance = instance_create_layer(_x, _y, "Instances", oHandleIn, {
+    var _object = (_handleData[$ "constant"] ?? false)? oHandleConstant : oHandleIn;
+    
+    var _handleInstance = instance_create_layer(_x, _y, "Instances", _object, {
         node: id,
         datatype: _handleData.datatype,
         label: _handleData.label,

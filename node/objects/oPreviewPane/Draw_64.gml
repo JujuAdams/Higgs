@@ -27,6 +27,8 @@ repeat(array_length(particleArray))
         
         draw_circle(_x, _y, 20, true);
     }
+    
+    ++_i;
 }
 
 surface_reset_target();

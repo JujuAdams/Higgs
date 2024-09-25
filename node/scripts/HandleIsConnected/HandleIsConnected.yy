@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"HandleIsConnected",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"HandleIsConnected",
+  "parent":{
+    "name":"Handles",
+    "path":"folders/Handles.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

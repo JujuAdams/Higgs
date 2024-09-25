@@ -4,7 +4,7 @@ path = get_open_filename_ext("Project|*.yyp", "project.yyp", GM_project_filename
 
 if (not string_pos(".yyp", path))
 {
-    ModalCreateMessageTimed("No project chosen");
+    ModalCreateMessageTimed("No project chosen.");
 }
 else
 {

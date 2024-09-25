@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"NodeGetHandleOutCount",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"NodeGetHandleOutCount",
+  "parent":{
+    "name":"Nodes",
+    "path":"folders/Nodes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

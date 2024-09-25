@@ -3,3 +3,6 @@
 event_inherited();
 
 edge = noone;
+
+previewValue = undefined;
+previewValueSet = false;

@@ -8,8 +8,8 @@
   "name":"oHandleIn",
   "overriddenProperties":[],
   "parent":{
-    "name":"Edges",
-    "path":"folders/Edges.yy",
+    "name":"Handles",
+    "path":"folders/Handles.yy",
   },
   "parentObjectId":{
     "name":"oHandleParent",

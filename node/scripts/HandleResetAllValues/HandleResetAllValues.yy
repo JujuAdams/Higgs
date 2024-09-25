@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"HandleResetAllValues",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"HandleResetAllValues",
+  "parent":{
+    "name":"Handles",
+    "path":"folders/Handles.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

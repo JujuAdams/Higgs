@@ -8,7 +8,7 @@ function EffectPopulatePermanents()
     array_push(_array, NodeCreate(0, 0, "vertexPosition"));
     array_push(_array, NodeCreate(0, 0, "particleIndex"));
     array_push(_array, NodeCreate(0, 0, "emitterPosition"));
-    array_push(_array, NodeCreate(0, 0, "time"));
+    array_push(_array, NodeCreate(0, 0, "age"));
     NodeLayoutArray(_array, -1000);
     
     var _array = [];

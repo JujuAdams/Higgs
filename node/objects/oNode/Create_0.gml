@@ -1,5 +1,7 @@
 // Feather disable all
 
+nodeTypeData.previewFunc = method(self, nodeTypeData.previewFunc);
+
 dragging = false;
 dragDX   = 0;
 dragDY   = 0;

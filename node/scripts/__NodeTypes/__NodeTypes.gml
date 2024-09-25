@@ -23,6 +23,13 @@ global.nodeTypes = {
                 datatype: "vec2",
             },
         ],
+        
+        previewFunc: function()
+        {
+            var _a = PreviewGetHandleIn(id, 0, 2);
+            var _b = PreviewGetHandleIn(id, 1, 2);
+            PreviewSetHandleOut(id, 0, [_a[0] + _b[0], _a[1] + _b[1]]);
+        },
     },
     
     multiply: {
@@ -46,6 +53,13 @@ global.nodeTypes = {
                 datatype: "vec2",
             },
         ],
+        
+        previewFunc: function()
+        {
+            var _a = PreviewGetHandleIn(id, 0, 2);
+            var _b = PreviewGetHandleIn(id, 1, 1);
+            PreviewSetHandleOut(id, 0, [_a[0]*_b, _a[1]*_b]);
+        },
     },
     
     
@@ -56,6 +70,7 @@ global.nodeTypes = {
         label: "Vertex Position",
         description: "Outputs the vertex position as a vec2\nThe x and y values will be either -0.5 or +0.5",
         permanent: true,
+        inputNode: true,
         
         in: [],
         
@@ -65,12 +80,18 @@ global.nodeTypes = {
                 datatype: "vec2",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, PreviewGetInput("vertexPosition", 2));
+        },
     },
     
     particleIndex: {
         label: "Particle Index",
         description: "Outputs the particle's index as a float",
         permanent: true,
+        inputNode: true,
         
         in: [],
         
@@ -80,12 +101,18 @@ global.nodeTypes = {
                 datatype: "float",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, PreviewGetInput("particleIndex", 1));
+        },
     },
     
     emitterPosition: {
         label: "Emitter Position",
         description: "Outputs the emitter's world-space position as a vec2",
         permanent: true,
+        inputNode: true,
         
         in: [],
         
@@ -95,36 +122,32 @@ global.nodeTypes = {
                 datatype: "vec2",
             },
         ],
-    },
-    
-    time: {
-        label: "Time",
-        description: "Outputs the emitter's time as a float",
-        permanent: true,
         
-        in: [],
-        
-        out: [
-            {
-                label: "time",
-                datatype: "float",
-            },
-        ],
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, PreviewGetInput("emitterPosition", 2));
+        },
     },
     
     age: {
         label: "Age",
         description: "Outputs the particle's age as a float",
         permanent: true,
+        inputNode: true,
         
         in: [],
         
         out: [
             {
-                label: "time",
+                label: "age",
                 datatype: "float",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, PreviewGetInput("age", 1));
+        },
     },
     
     
@@ -134,6 +157,7 @@ global.nodeTypes = {
     constFloat: {
         label: "Const Float",
         description: "Outputs a constant float",
+        inputNode: true,
         
         in: [],
         
@@ -143,11 +167,17 @@ global.nodeTypes = {
                 datatype: "float",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, [PreviewGetValue(id, 0)]);
+        },
     },
     
     constVec2: {
         label: "Const Vec2",
         description: "Outputs a constant vec2",
+        inputNode: true,
         
         in: [],
         
@@ -157,11 +187,17 @@ global.nodeTypes = {
                 datatype: "vec2",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, [PreviewGetValue(id, 0), PreviewGetValue(id, 1)]);
+        },
     },
     
     constVec3: {
         label: "Const Vec3",
         description: "Outputs a constant vec3",
+        inputNode: true,
         
         in: [],
         
@@ -171,11 +207,17 @@ global.nodeTypes = {
                 datatype: "vec3",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, [PreviewGetValue(id, 0), PreviewGetValue(id, 1), PreviewGetValue(id, 2)]);
+        },
     },
     
     constVec4: {
         label: "Const Vec4",
         description: "Outputs a constant vec4",
+        inputNode: true,
         
         in: [],
         
@@ -185,6 +227,11 @@ global.nodeTypes = {
                 datatype: "vec4",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, [PreviewGetValue(id, 0), PreviewGetValue(id, 1), PreviewGetValue(id, 2), PreviewGetValue(id, 3)]);
+        },
     },
     
     
@@ -203,6 +250,11 @@ global.nodeTypes = {
                 datatype: "float",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, [random(1)]);
+        },
     },
     
     randomVector: {
@@ -217,6 +269,12 @@ global.nodeTypes = {
                 datatype: "vec2",
             },
         ],
+        
+        previewFunc: function()
+        {
+            var _angle = random(360);
+            PreviewSetHandleOut(id, 0, [lengthdir_x(1, _angle), lengthdir_y(1, _angle)])
+        },
     },
     
     
@@ -225,6 +283,7 @@ global.nodeTypes = {
     uniformFloat: {
         label: "Uniform Float",
         description: "Outputs a float passed as a uniform parameter",
+        inputNode: true,
         
         in: [],
         
@@ -234,11 +293,17 @@ global.nodeTypes = {
                 datatype: "float",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, PreviewGetInput(PreviewGetValue(id, 0), 1));
+        },
     },
     
     uniformVec2: {
         label: "Uniform Vec2",
         description: "Outputs a vec2 passed as a uniform parameter",
+        inputNode: true,
         
         in: [],
         
@@ -248,11 +313,17 @@ global.nodeTypes = {
                 datatype: "vec2",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, PreviewGetInput(PreviewGetValue(id, 0), 2));
+        },
     },
     
     uniformVec3: {
         label: "Uniform Vec3",
         description: "Outputs a vec3 passed as a uniform parameter",
+        inputNode: true,
         
         in: [],
         
@@ -262,11 +333,17 @@ global.nodeTypes = {
                 datatype: "vec3",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, PreviewGetInput(PreviewGetValue(id, 0), 3));
+        },
     },
     
     uniformVec4: {
         label: "Uniform Vec4",
         description: "Outputs a vec4 passed as a uniform parameter",
+        inputNode: true,
         
         in: [],
         
@@ -276,6 +353,11 @@ global.nodeTypes = {
                 datatype: "vec4",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, PreviewGetInput(PreviewGetValue(id, 0), 4));
+        },
     },
     
     
@@ -286,6 +368,7 @@ global.nodeTypes = {
         label: "Output Position",
         description: "Receives a vec2 for the position of the vertex",
         permanent: true,
+        outputNode: true,
         
         in: [
             {
@@ -295,12 +378,18 @@ global.nodeTypes = {
         ],
         
         out: [],
+        
+        previewFunc: function()
+        {
+            PreviewSetOutput("outputPosition", PreviewGetHandleIn(id, 0, 2));
+        },
     },
     
     outputSprite: {
         label: "Output Sprite",
         description: "Receives a float for the sprite index of the particle",
         permanent: true,
+        outputNode: true,
         
         in: [
             {
@@ -310,12 +399,18 @@ global.nodeTypes = {
         ],
         
         out: [],
+        
+        previewFunc: function()
+        {
+            PreviewSetOutput("outputSprite", PreviewGetHandleIn(id, 0, 1));
+        },
     },
     
     outputImage: {
         label: "Output Image",
         description: "Receives a float for the image index of the particle",
         permanent: true,
+        outputNode: true,
         
         in: [
             {
@@ -325,12 +420,18 @@ global.nodeTypes = {
         ],
         
         out: [],
+        
+        previewFunc: function()
+        {
+            PreviewSetOutput("outputImage", PreviewGetHandleIn(id, 0, 1));
+        },
     },
     
     outputColor: {
         label: "Output Color",
         description: "Receives a vec4 for the color of the particle\nThe x/y/z/w components map to r/g/b/a",
         permanent: true,
+        outputNode: true,
         
         in: [
             {
@@ -340,6 +441,11 @@ global.nodeTypes = {
         ],
         
         out: [],
+        
+        previewFunc: function()
+        {
+            PreviewSetOutput("outputColor", PreviewGetHandleIn(id, 0, 4));
+        },
     },
     
     
@@ -367,6 +473,13 @@ global.nodeTypes = {
                 datatype: "float",
             },
         ],
+        
+        previewFunc: function()
+        {
+            var _vector = PreviewGetHandleIn(id, 0, 2);
+            PreviewSetHandleOut(id, 0, _vector[0]);
+            PreviewSetHandleOut(id, 1, _vector[1]);
+        },
     },
     
     expandVec3: {
@@ -394,6 +507,14 @@ global.nodeTypes = {
                 datatype: "float",
             },
         ],
+        
+        previewFunc: function()
+        {
+            var _vector = PreviewGetHandleIn(id, 0, 3);
+            PreviewSetHandleOut(id, 0, _vector[0]);
+            PreviewSetHandleOut(id, 1, _vector[1]);
+            PreviewSetHandleOut(id, 2, _vector[2]);
+        },
     },
     
     expandVec4: {
@@ -425,6 +546,15 @@ global.nodeTypes = {
                 datatype: "float",
             },
         ],
+        
+        previewFunc: function()
+        {
+            var _vector = PreviewGetHandleIn(id, 0, 4);
+            PreviewSetHandleOut(id, 0, _vector[0]);
+            PreviewSetHandleOut(id, 1, _vector[1]);
+            PreviewSetHandleOut(id, 2, _vector[2]);
+            PreviewSetHandleOut(id, 3, _vector[2]);
+        },
     },
     
     
@@ -452,6 +582,11 @@ global.nodeTypes = {
                 datatype: "vec2",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, [PreviewGetHandleIn(id, 0, 1), PreviewGetHandleIn(id, 1, 1)]);
+        },
     },
     
     combineVec3: {
@@ -479,6 +614,11 @@ global.nodeTypes = {
                 datatype: "vec3",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, [PreviewGetHandleIn(id, 0, 1), PreviewGetHandleIn(id, 1, 1), PreviewGetHandleIn(id, 2, 1)]);
+        },
     },
     
     combineVec4: {
@@ -510,5 +650,10 @@ global.nodeTypes = {
                 datatype: "vec4",
             },
         ],
+        
+        previewFunc: function()
+        {
+            PreviewSetHandleOut(id, 0, [PreviewGetHandleIn(id, 0, 1), PreviewGetHandleIn(id, 1, 1), PreviewGetHandleIn(id, 2, 1), PreviewGetHandleIn(id, 3, 1)]);
+        },
     },
 };

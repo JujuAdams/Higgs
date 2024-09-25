@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"NodeCopyFilterConnectedOut",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"NodeCopyFilterConnectedOut",
+  "parent":{
+    "name":"Nodes",
+    "path":"folders/Nodes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

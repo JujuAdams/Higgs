@@ -162,6 +162,18 @@ function ContextMenuOpen(_subject)
                             ],
                         },
                         {
+                            branch: "Expand & Combine ...",
+                            children: [
+                                {
+                                    button: "Combine vec2",
+                                    func: function()
+                                    {
+                                        NodeCreate(topLevel.roomX, topLevel.roomY, "combineVec2");
+                                    },
+                                },
+                            ],
+                        },
+                        {
                             branch: "Motion ...",
                             children: [
                                 {
